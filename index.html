@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>浪漫小站 — 浪漫登陆页模板</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Noto+Sans+SC:wght@300;400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <meta name="description" content="简洁优雅的中文浪漫主题登陆页模板，适合婚礼、周年、邀请等场景。">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="#">浪漫小站</a>
+      <nav class="nav">
+        <a href="#about">关于</a>
+        <a href="#gallery">相册</a>
+        <a href="#rsvp" class="btn-outline">回执</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container hero-inner">
+        <div class="hero-text">
+          <h1>两颗心，一段故事。</h1>
+          <p>优雅响应式模板，适用于婚礼官网、周年纪念、浪漫活动邀请或个人落地页。</p>
+          <div class="hero-ctas">
+            <a href="#rsvp" class="btn">确认参加</a>
+            <a href="#gallery" class="btn ghost">查看相册</a>
+          </div>
+        </div>
+        <div class="hero-art">
+          <div class="heart" aria-hidden="true"></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="about" class="section about">
+      <div class="container">
+        <h2>关于我们</h2>
+        <p class="lead">我们在一个雨天相遇，此后再也没有回头。这个小站记录我们的故事、照片以及参加方式。</p>
+        <div class="cards">
+          <article class="card">
+            <h3>我们的故事</h3>
+            <p>从朋友到牵手——一些重要时刻的时间线。</p>
+          </article>
+          <article class="card">
+            <h3>活动信息</h3>
+            <p>包含日期、会场、着装建议与流程安排等详情。</p>
+          </article>
+          <article class="card">
+            <h3>礼物与回执</h3>
+            <p>礼物建议与在线回执表单，方便您确认出席信息。</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="gallery" class="section gallery">
+      <div class="container">
+        <h2>相册</h2>
+        <p class="lead">我们喜欢的一些瞬间。</p>
+        <div class="grid">
+          <div class="photo" style="background-image:url('https://picsum.photos/seed/1/600/400')" role="img" aria-label="照片 1"></div>
+          <div class="photo" style="background-image:url('https://picsum.photos/seed/2/600/400')" role="img" aria-label="照片 2"></div>
+          <div class="photo" style="background-image:url('https://picsum.photos/seed/3/600/400')" role="img" aria-label="照片 3"></div>
+          <div class="photo" style="background-image:url('https://picsum.photos/seed/4/600/400')" role="img" aria-label="照片 4"></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="rsvp" class="section rsvp">
+      <div class="container">
+        <h2>回执</h2>
+        <p class="lead">非常希望您能来，请在下方告知是否出席。</p>
+        <form id="rsvp-form" class="form">
+          <div class="form-row">
+            <label for="name">姓名</label>
+            <input id="name" name="name" type="text" placeholder="您的姓名" required>
+          </div>
+          <div class="form-row">
+            <label for="email">邮箱</label>
+            <input id="email" name="email" type="email" placeholder="you@example.com" required>
+          </div>
+          <div class="form-row">
+            <label for="attending">是否出席</label>
+            <select id="attending" name="attending" required>
+              <option value="">请选择</option>
+              <option value="yes">会出席</option>
+              <option value="no">无法出席</option>
+              <option value="maybe">可能/待定</option>
+            </select>
+          </div>
+          <div class="form-row">
+            <label for="message">留言（可选）</label>
+            <textarea id="message" name="message" rows="3" placeholder="写下祝福或备注..."></textarea>
+          </div>
+          <div class="form-actions">
+            <button type="submit" class="btn">发送回执</button>
+            <div id="rsvp-status" class="status" aria-live="polite"></div>
+          </div>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>用 ♥ 制作 · 浪漫模板</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
