@@ -1,117 +1,169 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="zh-CN">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>浪漫小站 — 浪漫登陆页模板</title>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Noto+Sans+SC:wght@300;400;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css">
-  <meta name="description" content="简洁优雅的中文浪漫主题登陆页模板，适合婚礼、周年、邀请等场景。">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>一周年快乐</title>
+    <style>
+        /* 页面整体风格 - 这里的颜色你可以改 */
+        :root {
+            --bg-color: #fff9f9; /* 背景色：淡粉白 */
+            --timeline-color: #ff9a9e; /* 时间轴线条颜色 */
+            --card-bg: #ffffff; /* 卡片背景 */
+            --text-color: #333;
+        }
+
+        body {
+            font-family: "Microsoft YaHei", sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            text-align: center;
+            padding: 60px 20px;
+            background: linear-gradient(to bottom, #fad0c4 0%, #ffd1ff 100%);
+            color: #fff;
+        }
+
+        h1 { margin: 0; font-size: 2.5em; text-shadow: 1px 1px 3px rgba(0,0,0,0.2); }
+        p.subtitle { font-size: 1.2em; margin-top: 10px; opacity: 0.9; }
+
+        /* 时间轴容器 */
+        .timeline {
+            position: relative;
+            max-width: 800px;
+            margin: 40px auto;
+            padding: 20px;
+        }
+
+        /* 中间的竖线 */
+        .timeline::after {
+            content: '';
+            position: absolute;
+            width: 4px;
+            background-color: var(--timeline-color);
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            margin-left: -2px;
+            border-radius: 2px;
+        }
+
+        /* 每一个故事块 */
+        .container {
+            padding: 10px 40px;
+            position: relative;
+            background-color: inherit;
+            width: 50%;
+            box-sizing: border-box;
+        }
+
+        /* 左右布局 */
+        .left { left: 0; }
+        .right { left: 50%; }
+
+        /* 时间轴上的小圆点 */
+        .container::after {
+            content: '❤'; /* 这里是个爱心 */
+            position: absolute;
+            width: 25px;
+            height: 25px;
+            right: -12.5px;
+            background-color: #fff;
+            border: 4px solid #ff6b6b;
+            top: 15px;
+            border-radius: 50%;
+            z-index: 1;
+            text-align: center;
+            line-height: 25px;
+            font-size: 12px;
+            color: #ff6b6b;
+        }
+
+        .right::after { left: -12.5px; }
+
+        /* 内容卡片 */
+        .content {
+            padding: 20px;
+            background-color: var(--card-bg);
+            position: relative;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+
+        .date {
+            font-weight: bold;
+            color: #ff6b6b;
+            margin-bottom: 10px;
+            display: block;
+        }
+
+        /* 图片和视频的样式 */
+        img, video {
+            max-width: 100%;
+            border-radius: 8px;
+            margin-top: 10px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        /* 手机端适配：变成单列 */
+        @media screen and (max-width: 600px) {
+            .timeline::after { left: 31px; }
+            .container { width: 100%; padding-left: 70px; padding-right: 25px; }
+            .container::after { left: 18px; }
+            .left::after, .right::after { left: 18px; }
+            .right { left: 0%; }
+        }
+    </style>
 </head>
 <body>
-  <header class="site-header">
-    <div class="container header-inner">
-      <a class="logo" href="#">浪漫小站</a>
-      <nav class="nav">
-        <a href="#about">关于</a>
-        <a href="#gallery">相册</a>
-        <a href="#rsvp" class="btn-outline">回执</a>
-      </nav>
+
+<header>
+    <h1>一周年快乐</h1>
+    <p class="subtitle">Michael & [女朋友名字]</p> </header>
+
+<div class="timeline">
+
+    <div class="container left">
+        <div class="content">
+            <span class="date">2023.12.13</span>
+            <h2>初遇的那天</h2>
+            <p>这里写你们第一次见面的故事。比如当时天气怎么样，你穿了什么衣服，第一眼看到她的感觉...</p>
+            <img src="1.jpg" alt="初遇照片">
+        </div>
     </div>
-  </header>
 
-  <main>
-    <section class="hero">
-      <div class="container hero-inner">
-        <div class="hero-text">
-          <h1>两颗心，一段故事。</h1>
-          <p>优雅响应式模板，适用于婚礼官网、周年纪念、浪漫活动邀请或个人落地页。</p>
-          <div class="hero-ctas">
-            <a href="#rsvp" class="btn">确认参加</a>
-            <a href="#gallery" class="btn ghost">查看相册</a>
-          </div>
+    <div class="container right">
+        <div class="content">
+            <span class="date">2024.01.08</span>
+            <h2>再相见 / 我的生日</h2>
+            <p>那天是你陪我过的生日，虽然很冷但是心里很暖...</p>
+            <video src="2.mp4" controls></video>
         </div>
-        <div class="hero-art">
-          <div class="heart" aria-hidden="true"></div>
-        </div>
-      </div>
-    </section>
-
-    <section id="about" class="section about">
-      <div class="container">
-        <h2>关于我们</h2>
-        <p class="lead">我们在一个雨天相遇，此后再也没有回头。这个小站记录我们的故事、照片以及参加方式。</p>
-        <div class="cards">
-          <article class="card">
-            <h3>我们的故事</h3>
-            <p>从朋友到牵手——一些重要时刻的时间线。</p>
-          </article>
-          <article class="card">
-            <h3>活动信息</h3>
-            <p>包含日期、会场、着装建议与流程安排等详情。</p>
-          </article>
-          <article class="card">
-            <h3>礼物与回执</h3>
-            <p>礼物建议与在线回执表单，方便您确认出席信息。</p>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section id="gallery" class="section gallery">
-      <div class="container">
-        <h2>相册</h2>
-        <p class="lead">我们喜欢的一些瞬间。</p>
-        <div class="grid">
-          <div class="photo" style="background-image:url('https://picsum.photos/seed/1/600/400')" role="img" aria-label="照片 1"></div>
-          <div class="photo" style="background-image:url('https://picsum.photos/seed/2/600/400')" role="img" aria-label="照片 2"></div>
-          <div class="photo" style="background-image:url('https://picsum.photos/seed/3/600/400')" role="img" aria-label="照片 3"></div>
-          <div class="photo" style="background-image:url('https://picsum.photos/seed/4/600/400')" role="img" aria-label="照片 4"></div>
-        </div>
-      </div>
-    </section>
-
-    <section id="rsvp" class="section rsvp">
-      <div class="container">
-        <h2>回执</h2>
-        <p class="lead">非常希望您能来，请在下方告知是否出席。</p>
-        <form id="rsvp-form" class="form">
-          <div class="form-row">
-            <label for="name">姓名</label>
-            <input id="name" name="name" type="text" placeholder="您的姓名" required>
-          </div>
-          <div class="form-row">
-            <label for="email">邮箱</label>
-            <input id="email" name="email" type="email" placeholder="you@example.com" required>
-          </div>
-          <div class="form-row">
-            <label for="attending">是否出席</label>
-            <select id="attending" name="attending" required>
-              <option value="">请选择</option>
-              <option value="yes">会出席</option>
-              <option value="no">无法出席</option>
-              <option value="maybe">可能/待定</option>
-            </select>
-          </div>
-          <div class="form-row">
-            <label for="message">留言（可选）</label>
-            <textarea id="message" name="message" rows="3" placeholder="写下祝福或备注..."></textarea>
-          </div>
-          <div class="form-actions">
-            <button type="submit" class="btn">发送回执</button>
-            <div id="rsvp-status" class="status" aria-live="polite"></div>
-          </div>
-        </form>
-      </div>
-    </section>
-  </main>
-
-  <footer class="site-footer">
-    <div class="container">
-      <p>用 ♥ 制作 · 浪漫模板</p>
     </div>
-  </footer>
 
-  <script src="script.js"></script>
+    <div class="container left">
+        <div class="content">
+            <span class="date">2024.05.20</span>
+            <h2>第一次旅行</h2>
+            <p>我们去了海边/山里，记得当时...</p>
+            <img src="3.jpg" alt="旅行照片">
+        </div>
+    </div>
+
+    <div class="container right">
+        <div class="content">
+            <span class="date">2024.12.13</span>
+            <h2>一周年快乐</h2>
+            <p>不知不觉一年了，谢谢你的陪伴。我想对你说：我会一直爱你，直到永远。</p>
+            <img src="4.jpg" alt="一周年合照">
+        </div>
+    </div>
+
+</div>
+
 </body>
 </html>
