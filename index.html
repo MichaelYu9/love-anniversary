@@ -3,166 +3,164 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>一周年快乐</title>
+    <title>一周年快乐 - To My Love</title>
+    <link href="https://fonts.googleapis.com/css2?family=Ma+Shan+Zheng&family=Noto+Serif+SC:wght@300;400;700&display=swap" rel="stylesheet">
     <style>
-        /* 页面整体风格 - 这里的颜色你可以改 */
-        :root {
-            --bg-color: #fff9f9; /* 背景色：淡粉白 */
-            --timeline-color: #ff9a9e; /* 时间轴线条颜色 */
-            --card-bg: #ffffff; /* 卡片背景 */
-            --text-color: #333;
-        }
-
-        body {
-            font-family: "Microsoft YaHei", sans-serif;
-            background-color: var(--bg-color);
-            color: var(--text-color);
-            margin: 0;
-            padding: 0;
-        }
-
-        header {
-            text-align: center;
-            padding: 60px 20px;
-            background: linear-gradient(to bottom, #fad0c4 0%, #ffd1ff 100%);
-            color: #fff;
-        }
-
-        h1 { margin: 0; font-size: 2.5em; text-shadow: 1px 1px 3px rgba(0,0,0,0.2); }
-        p.subtitle { font-size: 1.2em; margin-top: 10px; opacity: 0.9; }
-
-        /* 时间轴容器 */
-        .timeline {
-            position: relative;
-            max-width: 800px;
-            margin: 40px auto;
-            padding: 20px;
-        }
-
-        /* 中间的竖线 */
-        .timeline::after {
-            content: '';
-            position: absolute;
-            width: 4px;
-            background-color: var(--timeline-color);
-            top: 0;
-            bottom: 0;
-            left: 50%;
-            margin-left: -2px;
-            border-radius: 2px;
-        }
-
-        /* 每一个故事块 */
-        .container {
-            padding: 10px 40px;
-            position: relative;
-            background-color: inherit;
-            width: 50%;
-            box-sizing: border-box;
-        }
-
-        /* 左右布局 */
-        .left { left: 0; }
-        .right { left: 50%; }
-
-        /* 时间轴上的小圆点 */
-        .container::after {
-            content: '❤'; /* 这里是个爱心 */
-            position: absolute;
-            width: 25px;
-            height: 25px;
-            right: -12.5px;
-            background-color: #fff;
-            border: 4px solid #ff6b6b;
-            top: 15px;
-            border-radius: 50%;
-            z-index: 1;
-            text-align: center;
-            line-height: 25px;
-            font-size: 12px;
-            color: #ff6b6b;
-        }
-
-        .right::after { left: -12.5px; }
-
-        /* 内容卡片 */
-        .content {
-            padding: 20px;
-            background-color: var(--card-bg);
-            position: relative;
-            border-radius: 10px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-        }
-
-        .date {
-            font-weight: bold;
-            color: #ff6b6b;
-            margin-bottom: 10px;
-            display: block;
-        }
-
-        /* 图片和视频的样式 */
-        img, video {
-            max-width: 100%;
-            border-radius: 8px;
-            margin-top: 10px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-        }
-
-        /* 手机端适配：变成单列 */
-        @media screen and (max-width: 600px) {
-            .timeline::after { left: 31px; }
-            .container { width: 100%; padding-left: 70px; padding-right: 25px; }
-            .container::after { left: 18px; }
-            .left::after, .right::after { left: 18px; }
-            .right { left: 0%; }
-        }
+        :root { --primary: #ff9a9e; --bg: #fff0f5; --text: #555; --card-bg: rgba(255, 255, 255, 0.95); }
+        body { font-family: 'Noto Serif SC', serif; background: linear-gradient(120deg, #fdfbfb 0%, #ebedee 100%); color: var(--text); margin: 0; padding-bottom: 80px; line-height: 1.8; }
+        /* 使用烟花图(图19)作为背景，如果没有改成19.jpg，这里会黑屏，记得上传 */
+        header { height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center; background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('19.jpg'); background-size: cover; background-position: center; color: white; text-align: center; padding: 20px; }
+        h1 { font-family: 'Ma Shan Zheng', cursive; font-size: 4em; margin-bottom: 20px; text-shadow: 2px 2px 10px rgba(0,0,0,0.5); }
+        .subtitle { font-size: 1.2em; opacity: 0.9; max-width: 600px; }
+        .letter-box { max-width: 800px; margin: -50px auto 50px; background: var(--card-bg); padding: 40px; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); position: relative; z-index: 10; }
+        .letter-text { white-space: pre-wrap; text-align: justify; }
+        .timeline { max-width: 900px; margin: 0 auto; position: relative; padding: 20px; }
+        .timeline-item { margin-bottom: 60px; position: relative; padding-left: 30px; border-left: 3px solid var(--primary); }
+        .timeline-item::before { content: '❤'; position: absolute; left: -14px; top: 0; background: white; width: 25px; height: 25px; text-align: center; line-height: 25px; border-radius: 50%; border: 2px solid var(--primary); color: var(--primary); font-size: 12px; }
+        .date-tag { display: inline-block; background: var(--primary); color: white; padding: 5px 15px; border-radius: 20px; font-size: 0.9em; margin-bottom: 15px; }
+        .story-title { font-size: 1.5em; color: #333; margin: 10px 0; font-family: 'Ma Shan Zheng', cursive; }
+        .media-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 10px; margin-top: 15px; }
+        img, video { width: 100%; border-radius: 8px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); transition: transform 0.3s; }
+        img:hover { transform: scale(1.02); }
+        .poem-box { text-align: center; font-style: italic; color: #777; margin: 50px 0; padding: 30px; background: rgba(255,255,255,0.5); border-radius: 10px; }
+        .poem-line { display: block; margin: 10px 0; font-family: 'Ma Shan Zheng', cursive; font-size: 1.3em; }
     </style>
 </head>
 <body>
 
 <header>
     <h1>一周年快乐</h1>
-    <p class="subtitle">Michael & [女朋友名字]</p> </header>
+    <p class="subtitle">Michael & 小喜宝宝<br>Two Hearts, One Story.</p>
+</header>
+
+<div class="letter-box">
+    <h2>见字如面</h2>
+    <div class="letter-text">
+        <p>见字如面，小喜宝宝，想我不呀。好久没给你写信啦，最近因为期末经常吵架，每次打电话聊上几句就吵，所以很早就动了给你写信的念头了。</p>
+        <p>时间好快，去年的这个时候我们才刚相遇，如今已经一年了。说实话没想到能这么久呢。因为你也知道我的观点的，怎么说呢，如果说太年轻的爱注定要分开，那我是不是应该晚一点再说我爱你呢。</p>
+        <p>好啦，不说这些，这次主要是做一个回忆录。记录一下一年来的点点滴滴和会议。当然这其中有些照片在你看来可能是丑照，但有句话说得好，女人永远不知道这种照片比她花大几千拍的写真更让人着迷。因为这才是更生动的live图不是。</p>
+    </div>
+</div>
 
 <div class="timeline">
 
-    <div class="container left">
-        <div class="content">
-            <span class="date">2023.12.13</span>
-            <h2>初遇的那天</h2>
-            <p>这里写你们第一次见面的故事。比如当时天气怎么样，你穿了什么衣服，第一眼看到她的感觉...</p>
-            <img src="1.jpg" alt="初遇照片">
+    <div class="timeline-item">
+        <span class="date-tag">2023.12.13 · 初遇</span>
+        <div class="story-title">第一次心动</div>
+        <p>第一次的印象永远是很重要的。小喜第一次的妆确实很好看很心动捏。不管是穿搭还是发型都很好看。戴着眼镜就是可爱，而且还香香的捏。</p>
+        <video src="v1.mp4" controls></video>
+    </div>
+
+    <div class="timeline-item">
+        <span class="date-tag">长沙 & 珠海长隆</span>
+        <div class="story-title">不管是酒店还是乐园</div>
+        <p>然后咱们就一起去长沙看比赛了。之后在酒店请摄影师又出片了呢。当时我还很不爽，因为你拍照的时候还不让我看，我寻思说那么见外呢。</p>
+        <p>之后又去珠海长隆玩啦。那个时候脸圆嘟嘟的真可爱。你总说你胖了，但我觉得还是有点肉肉好看的。因为你眼镜很大，脸太瘦的话其实不好看。有点肉肉身体也好也说明喜宝宝胃口好能吃。千万别学我的作息和饮食呢。</p>
+        <div class="media-grid">
+            <img src="1.jpg" alt="长沙">
+            <img src="2.jpg" alt="长隆1">
+            <img src="3.jpg" alt="长隆2">
         </div>
     </div>
 
-    <div class="container right">
-        <div class="content">
-            <span class="date">2024.01.08</span>
-            <h2>再相见 / 我的生日</h2>
-            <p>那天是你陪我过的生日，虽然很冷但是心里很暖...</p>
-            <video src="2.mp4" controls></video>
+    <div class="timeline-item">
+        <span class="date-tag">2024.01.08 · 成都</span>
+        <div class="story-title">最特别的生日</div>
+        <p>宝宝专门来给我过生啦！最有感觉的一张照片和角度。宝宝准备的生日礼物都很喜欢，鼠标到现在都还舍不得用呢。全都送到心坎上了。</p>
+        <p>还一起去文殊院呢，第一次排队摸这个福，以前我也从来不排的。祝LHL心想事成呢。文书菩萨保佑你哦。</p>
+        <div class="media-grid">
+            <img src="4.jpg" alt="最有感觉">
+            <img src="5.jpg" alt="摸福">
+            <img src="6.jpg" alt="小der">
+            <img src="7.jpg" alt="车里">
+        </div>
+        <p style="margin-top:20px">后面还说一起去洛带古镇玩拍照的，结果那天吵架啦。没看到美美的宝宝。你给我发的这个视频是最爱，太有感觉了。美瞳也好看，音乐也配的好，简直绝绝子。如果说成片照片是一股清冷感的话，那这个视频就多了一份亲切和可爱。这个视频我经常睡前看一看，甚是喜爱捏。可以排到top1。</p>
+        <video src="v2.mp4" controls></video>
+    </div>
+
+    <div class="timeline-item">
+        <span class="date-tag">2024.06.15 · 韩国</span>
+        <div class="story-title">林俊杰演唱会</div>
+        <p>第一次和喜宝宝一起看林俊杰演唱会捏，氛围确实不错呢。但是因为没给你拍照出片让你不开心咯，不然会更开心的吧。</p>
+        <p>宝宝给我带来亲手做的小人偶，确实很像我呢，还背了一个小鱼书包。简直太心灵手巧啦! 可爱可爱，跟你送我的小黄龙全部摆在一起珍藏着呢。</p>
+        <div class="media-grid">
+            <img src="8.jpg" alt="JJ1">
+            <img src="9.jpg" alt="JJ2">
+            <img src="10.jpg" alt="人偶">
+            <img src="11.jpg" alt="对镜">
         </div>
     </div>
 
-    <div class="container left">
-        <div class="content">
-            <span class="date">2024.05.20</span>
-            <h2>第一次旅行</h2>
-            <p>我们去了海边/山里，记得当时...</p>
-            <img src="3.jpg" alt="旅行照片">
+    <div class="timeline-item">
+        <span class="date-tag">2024.07.11 · 贵州</span>
+        <div class="story-title">抓到一只小Monkey</div>
+        <p>然后后面是去贵州玩呢，但是都没咋拍照都玩啦，但是抓到一只小monkey。嘿嘿嘿。</p>
+        <p>这个场景我很喜欢，粉粉的，也祝愿宝宝福气满满。</p>
+        <div class="media-grid">
+            <img src="12.jpg" alt="猴子">
+            <img src="18.jpg" alt="粉色场景">
+            <img src="13.jpg" alt="原图">
         </div>
     </div>
 
-    <div class="container right">
-        <div class="content">
-            <span class="date">2024.12.13</span>
-            <h2>一周年快乐</h2>
-            <p>不知不觉一年了，谢谢你的陪伴。我想对你说：我会一直爱你，直到永远。</p>
-            <img src="4.jpg" alt="一周年合照">
+    <div class="timeline-item">
+        <span class="date-tag">2024.08.23 · 迪士尼</span>
+        <div class="story-title">在烟花下许愿</div>
+        <p>之后咱就去心心念念的迪士尼啦。宝宝顶着三十多度的大太阳还戴假发穿裙子可太辛苦啦。不过确实很好看捏，小公主似的。太出片啦。绝美绝美。老样子对镜出片。</p>
+        <p>当然还有经典情侣照比如狐狸和兔子脑袋还有米奇帽子都拍啦，不得不说宝宝考虑的确实周到。</p>
+        <div class="media-grid">
+            <img src="14.jpg" alt="对镜">
+            <img src="15.jpg" alt="合照1">
+            <img src="16.jpg" alt="合照2">
+            <img src="17.jpg" alt="帽子">
         </div>
+        <p style="margin-top:10px">一起在疯狂动物城区吃了爪爪冰棒，还拍了照片呢，可爱可爱。</p>
+        <img src="20.jpg" alt="爪爪冰棒" style="margin-bottom:10px">
+        
+        <p>还是不错滴，拍了照也把好玩的都差不多玩完了，最后烟花也看啦。看着宝宝在烟花光下映照的侧脸，我在烟花下祝我们如愿以偿。果然和喜欢的人去迪士尼是最浪漫的事情。也不会再有下一个21岁能在上迪看眼花啦。</p>
+        <img src="19.jpg" alt="烟花">
     </div>
 
+    <div class="timeline-item">
+        <span class="date-tag">2024.09.26 · 再见重庆</span>
+        <div class="story-title">暂时的分别</div>
+        <p>转眼又到我新的一年出去的时候了。时光如梭。时间好快，上飞机的前一刻才开始后悔。怎么都没说去重庆哪里玩一下，就宅家里啦。我们应该出去逛街漫步，一起去体验新东西，一起去小宠物店，一起去做手工银饰啥的嘛。俺反思没有计划好，就在家里混吃等死啦哈哈哈哈。</p>
+        <p>不过宝宝做的饭确实好吃奥，超绝土豆丝。不错不错! 但是可惜了咱没有说拍什么照片啥的捏。应该还是找约拍的去哪里拍的好看的照片纪念下捏。 不过有宝宝送我去机场拍的嘿嘿。视频太长了传不了噜。</p>
+        <p>没事滴，没有合照说明我们还有再见的时候啦！</p>
+        <img src="21.jpg" alt="机场">
+    </div>
+
+</div>
+
+<div class="letter-box">
+    <h2>写在最后</h2>
+    <div class="letter-text">
+        <p>写完这些发现又过去一年啦，感觉18岁之后好快，转眼还有不到一个月我就要22了。但我其实一点都没做好21岁的准备。20岁以前意气风发，我以为我20 21岁会去看山和大海，落日余晖，可事实上我还在寻找自己。</p>
+        <p>我以前以为自然而然到二十几岁就会成为一个很厉害的大人，独立自主，自信洒脱。可现实中的我好像有很多性格缺陷，面对选择的时候犹豫不决不够坚定。紧张的时候内耗又爱钻牛角尖。摇摇晃晃迷迷糊糊的就长大了。</p>
+        <p>我也在慢慢学会改变自己，开解自己。也感觉小喜对我一直以来的包容和耐心。我很感谢不管我面临什么困境宝宝都会支持我。缘分可能就是这么奇妙吧，从dy认识的我们最开始也没想到会一起经历那么多。我一直相信所遇的人和事都是上天注定的。</p>
+        <p>缘分本来就稀薄寡淡，相逢一程已是感激万分。跟我这样性格的人能相处那么久我其实已经很满意了，相遇的过程就是上天给我的礼物了，所以我很知足，顺其自然就行了。也祝愿宝宝，平淡且幸福。有时候我容易说错话，容易惹你生气，但你不要钻牛角尖想太多，永远让自己开心奥。么么叽！</p>
+        <p><b>哦对，最后一句话，我们永远无法判断一个瞬间的价值，直到它成为回忆。希望宝宝不要觉得照片不好看咋的就删掉，那是你青春的记录和宝贵回忆。时隔几年再看又有不同的回忆和感慨了。</b></p>
+    </div>
+</div>
+
+<div class="poem-box">
+    <span class="poem-line">相见时难别亦难 李商隐</span>
+    <span class="poem-line">别时容易见时难 李煜</span>
+    <span class="poem-line">人生何处不相逢 晏殊</span>
+    <span class="poem-line">相逢何必曾相识 白居易</span>
+    <span class="poem-line">城南小陌又逢春 陆游</span>
+    <span class="poem-line">只见梅花不见人</span>
+    <span class="poem-line">无可奈何花落去 晏殊</span>
+    <span class="poem-line">似曾相识燕归来</span>
+    <span class="poem-line">物是人非事事休 李清照</span>
+    <span class="poem-line">欲语泪先流</span>
+</div>
+
+<div class="letter-box" style="text-align: center;">
+    <p>不知不觉的emo气质又开始犯病了，写到这里眼睛又有一点湿润了。<br>没事，以后还会想到的。<br>不管如何你要过的好好的┗|｀O′|┛ 嗷~~</p>
+    <p><b>最后最后，小喜要照顾好自己，不要生病，好好地吃饭哦。</b></p>
+    <br>
+    <p>—— 爱你的 Michael</p>
 </div>
 
 </body>
